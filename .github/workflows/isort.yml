@@ -25,5 +25,5 @@ jobs:
         pip install -r requirements_tests.txt
     - name: Sort code
       run: |
-        pip install pytest
+        pip install isort
         isort --recursive .

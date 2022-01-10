@@ -1,9 +1,11 @@
+import os.path
+
 import pytest
 import torch
 
 from src.models.model import MyAwesomeModel
-from src.models.train_model import main
 
+@pytest.mark.skipif(not os.path.exists('data/processed/train.pt'), reason="Train files not found")
 
 def test_inputshape_has_outputshape():
     train_dataset = torch.load('data/processed/train.pt')
