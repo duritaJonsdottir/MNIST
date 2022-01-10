@@ -14,6 +14,7 @@ from torch.utils.data import TensorDataset
     RUN: black data/make_dataset.py to clean format dataset
 """
 
+
 @click.command()
 @click.argument("input_filepath", type=click.Path(exists=True))
 @click.argument("output_filepath", type=click.Path())
@@ -54,7 +55,7 @@ def main(input_filepath, output_filepath):
     test_dataset = TensorDataset(
         torch.Tensor(test_set["images"]), torch.Tensor(test_set["labels"])
     )
-    
+
     # Save data to file
     torch.save(train_dataset, output_filepath + "train.pt")
     torch.save(test_dataset, output_filepath + "test.pt")

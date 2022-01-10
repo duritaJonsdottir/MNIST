@@ -5,7 +5,6 @@ class MyAwesomeModel(nn.Module):
     def __init__(self):
         super(MyAwesomeModel, self).__init__()
 
-
         self.conv1 = nn.Sequential(
             nn.Conv2d(
                 in_channels=1,
@@ -31,4 +30,4 @@ class MyAwesomeModel(nn.Module):
         # flatten the output of conv2 to (batch_size, 32 * 7 * 7)
         x = x.view(x.size(0), -1)
         output = self.out(x)
-        return output, x    # return x for visualization
+        return output, x  # return x for visualization
