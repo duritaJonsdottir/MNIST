@@ -1,7 +1,9 @@
-from src.models.train_model import main
-import torch
-from src.models.model import MyAwesomeModel
 import pytest
+import torch
+
+from src.models.model import MyAwesomeModel
+from src.models.train_model import main
+
 
 def test_inputshape_has_outputshape():
     train_dataset = torch.load('data/processed/train.pt')

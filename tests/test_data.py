@@ -1,8 +1,10 @@
+# If data is not present then skip
+import os.path
+
 import pytest
 import torch
 
-# If data is not present then skip
-import os.path
+
 @pytest.mark.skipif(not os.path.exists('data/processed/train.pt'), reason="Train files not found")
 @pytest.mark.skipif(not os.path.exists('data/processed/test.pt'), reason="Test files not found")
 

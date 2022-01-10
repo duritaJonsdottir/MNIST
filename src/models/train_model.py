@@ -1,14 +1,15 @@
 import argparse
+import os
 import sys
 
+import hydra
 import matplotlib.pyplot as plt
 import torch
 import torch.optim as optim
+from torch.utils.data import DataLoader, TensorDataset
+
 # from '../../data/processed' import '../../data/processed/train.pt';
 from src.models.model import MyAwesomeModel
-from torch.utils.data import DataLoader, TensorDataset
-import hydra
-import os
 
 """
 DOCKER: Make the code reproducable 
