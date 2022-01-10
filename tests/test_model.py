@@ -24,7 +24,7 @@ def test_inputshape_has_outputshape():
     assert images.shape == torch.Size([BATCH_SIZE,1,28,28]) and output.shape == torch.Size([BATCH_SIZE,10]), "Shape of model input and output did not match"
 
 # Test raise error
-# def test_error_on_wrong_shape():
-#     with pytest.raises(ValueError, match='Expected each sample to have shape [1, 28, 28]'):
-#         model = MyAwesomeModel() # My model
-#         model(torch.randn(1,1,2,3))
+def test_error_on_wrong_shape():
+    with pytest.raises(ValueError, match='Expected each sample to have shape [1, 28, 28]'):
+        model = MyAwesomeModel() # My model
+        model(torch.randn(1,1,2,3))
